@@ -3,15 +3,31 @@
   overflow: hidden;
   background-color: #64A737;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+
 </style>
+
 <header-->
 
-	<div class="header" id="navbar" >
+<style>
+	.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#navicon").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+	<div class="sticky" >
+	<div class="header" id="navbar">
 		<div class="container">
 			<div class="header-main">
 				<div class="logo">
@@ -19,8 +35,8 @@
 				</div>
 				<div class="head-right">	   		
 					<div class="top-nav">
-						<span class="menu"><img src="images/nav-icon.png" alt=""> </span>
-						<ul>
+						<span class="menu"><img src="images/nav-icon.png" id="navicon" alt=""> </span>
+						<ul id="panel">
 							<li><a href="#Home"  class="active"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 
 							<li class="dropdown nav-item">
@@ -68,6 +84,7 @@
 			</div>	
 		</div>
 	</div>
+</div>
 	<!--//header-->
 	<!--<script>
 window.onscroll = function() {myFunction()};
